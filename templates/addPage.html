@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylehome.css' %}"/>
+    <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+    <script src="{% url 'js-catlog' %}"></script>
+    <script src="{% static '/admin/js/core.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
+
+    <title>Home</title>
+
+    <style>
+      .form_container{
+        margin-top: 100px;
+        padding: 40px;
+        width: 400px;
+        border:solid 3px rgb(14, 46, 187);
+        border-radius: 10px;
+      }
+
+      form {
+        text-align: left;
+      }
+
+    </style>
+
+    
+  </head>
+  <body scroll="no" style="overflow: hidden">
+    <div class="container">
+        <center>
+          <div class="d-flex justify-content-center form_container bg-light">
+            <form method='POST'>
+              {% csrf_token %}
+              {{add_form.media}}
+              {{add_form.as_p}}
+              <center><button class='btn btn-primary' type="Submit">Tambah</button></center>
+            </form>
+          </div>
+        </center>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    </body>
+</html>
